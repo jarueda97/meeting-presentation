@@ -3,227 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meeting Presentation</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.production.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.production.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+    <title>Important Meeting Points</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            height: 100%;
-            overflow: hidden;
-        }
-        #root {
-            height: 100%;
-        }
         .slide {
+            display: none;
+        }
+        .slide.active {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            padding: 2rem;
-            color: #e9d8fd;
-            text-align: center;
-        }
-        .slide h1 {
-            font-size: 2.5rem;
-            color: #fbbf24;
-            margin-bottom: 1rem;
-        }
-        .slide h2 {
-            font-size: 2rem;
-            color: #fbbf24;
-            margin-bottom: 1rem;
-        }
-        .slide ul {
-            text-align: left;
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-        }
-        .button {
-            background-color: #fbbf24;
-            color: #4c1d95;
-            font-weight: bold;
-            padding: 0.5rem 1rem;
-            border-radius: 0.25rem;
-            border: none;
-            cursor: pointer;
-            margin: 0 0.5rem;
-        }
-        .button:hover {
-            background-color: #f59e0b;
-        }
-        .nav-buttons {
-            position: absolute;
-            bottom: 1rem;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 1rem;
-        }
-        .icon-container {
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
-            margin-top: 2rem;
-        }
-        .icon-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
     </style>
 </head>
-<body>
-    <div id="root"></div>
+<body class="bg-purple-100">
+    <div class="w-full h-screen flex flex-col items-center justify-center">
+        <div class="w-4/5 h-4/5 bg-white rounded-lg shadow-lg overflow-hidden relative">
+            <div id="slide1" class="slide active bg-gradient-to-br from-purple-700 to-blue-900 flex flex-col items-center justify-center h-full p-8">
+                <h1 class="text-4xl font-bold mb-4 text-yellow-400">Important Meeting Points</h1>
+                <p class="text-xl text-purple-200">VE Issues and HR Bonus Proposal</p>
+            </div>
+
+            <div id="slide2" class="slide bg-gradient-to-br from-purple-600 to-blue-800 flex flex-col items-center justify-center h-full p-8">
+                <h2 class="text-3xl font-bold mb-4 text-yellow-400">VE Situation Overview</h2>
+                <ul class="list-disc text-purple-200 text-xl">
+                    <li>Overtime work without compensation</li>
+                    <li>Request for work-from-home arrangement</li>
+                </ul>
+            </div>
+
+            <div id="slide3" class="slide bg-gradient-to-br from-purple-800 to-blue-900 flex flex-col items-center justify-center h-full p-8">
+                <h2 class="text-3xl font-bold mb-4 text-yellow-400">Overtime Issue</h2>
+                <ul class="list-disc text-purple-200 text-xl">
+                    <li>VE working overtime without pay</li>
+                    <li>Need to discuss charging the agency for overtime</li>
+                    <li>Determine appropriate overtime rates</li>
+                </ul>
+            </div>
+
+            <div id="slide4" class="slide bg-gradient-to-br from-purple-700 to-blue-800 flex flex-col items-center justify-center h-full p-8">
+                <h2 class="text-3xl font-bold mb-4 text-yellow-400">Overtime Discussion Points</h2>
+                <ul class="list-disc text-purple-200 text-xl">
+                    <li>Current overtime hours worked</li>
+                    <li>Standard industry overtime rates</li>
+                    <li>Impact on project costs and budgets</li>
+                    <li>Agency's willingness to pay for overtime</li>
+                </ul>
+            </div>
+
+            <div id="slide5" class="slide bg-gradient-to-br from-purple-600 to-blue-800 flex flex-col items-center justify-center h-full p-8">
+                <h2 class="text-3xl font-bold mb-4 text-yellow-400">Work-from-Home Request</h2>
+                <ul class="list-disc text-purple-200 text-xl">
+                    <li>VE prefers to work from home</li>
+                    <li>Cites busy days preventing participation in office activities</li>
+                    <li>Mentions office events like birthdays and sharings</li>
+                </ul>
+                <p class="text-purple-200 mt-4">Note: We will only discuss this situation without proposing solutions at this time.</p>
+            </div>
+
+            <div id="slide6" class="slide bg-gradient-to-br from-purple-700 to-blue-900 flex flex-col items-center justify-center h-full p-8">
+                <h2 class="text-3xl font-bold mb-4 text-yellow-400">HR Manager Bonus Proposal</h2>
+                <p class="text-xl text-purple-200">A Strategy for Growth and Efficiency</p>
+            </div>
+
+            <div id="slide7" class="slide bg-gradient-to-br from-purple-800 to-blue-900 flex flex-col items-center justify-center h-full p-8">
+                <h2 class="text-3xl font-bold mb-4 text-yellow-400">The Proposal</h2>
+                <ul class="list-disc text-purple-200 text-xl">
+                    <li>Bonus for each new hire</li>
+                    <li>300,000 Colombian Pesos per hire</li>
+                    <li>Increases HR manager's salary</li>
+                    <li>Aims to boost hiring efficiency</li>
+                </ul>
+            </div>
+
+            <div id="slide8" class="slide bg-gradient-to-br from-purple-600 to-blue-800 flex flex-col items-center justify-center h-full p-8">
+                <h2 class="text-3xl font-bold mb-4 text-yellow-400">Benefits of the Bonus System</h2>
+                <div class="flex justify-around w-full">
+                    <div class="flex flex-col items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                        <p class="text-purple-200 mt-2">Increased Salary</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        <p class="text-purple-200 mt-2">More Hires</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                        <p class="text-purple-200 mt-2">Company Growth</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="slide9" class="slide bg-gradient-to-br from-purple-700 to-blue-800 flex flex-col items-center justify-center h-full p-8">
+                <h2 class="text-3xl font-bold mb-4 text-yellow-400">Bonus Calculator</h2>
+                <div class="flex items-center mb-4">
+                    <button onclick="updateHires(-1)" class="bg-yellow-400 hover:bg-yellow-500 text-purple-900 font-bold py-2 px-4 rounded">-</button>
+                    <span id="hireCount" class="mx-4 text-2xl text-purple-200">10 Hires</span>
+                    <button onclick="updateHires(1)" class="bg-yellow-400 hover:bg-yellow-500 text-purple-900 font-bold py-2 px-4 rounded">+</button>
+                </div>
+                <p id="totalBonus" class="text-2xl text-purple-200">
+                    Total Bonus: 3,000,000 COP
+                </p>
+                <p class="text-xl text-yellow-400 mt-4">
+                    Potential Monthly Salary Increase!
+                </p>
+            </div>
+
+            <div id="slide10" class="slide bg-gradient-to-br from-purple-900 to-blue-900 flex flex-col items-center justify-center h-full p-8">
+                <h2 class="text-3xl font-bold mb-4 text-yellow-400">Action Items</h2>
+                <ul class="list-disc text-purple-200 text-xl">
+                    <li>Determine overtime charges for the agency</li>
+                    <li>Note work-from-home request for future discussion</li>
+                    <li>Consider implementing HR bonus system</li>
+                    <li>Evaluate impact on company growth and efficiency</li>
+                </ul>
+            </div>
+
+            <div id="slide11" class="slide bg-gradient-to-br from-purple-700 to-blue-900 flex flex-col items-center justify-center h-full p-8">
+                <h2 class="text-3xl font-bold mb-4 text-yellow-400">Questions and Discussion</h2>
+                <div class="flex justify-around w-full">
+                    <div class="flex flex-col items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        <p class="text-purple-200 mt-2">Overtime Charges</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                        <p class="text-purple-200 mt-2">Work-from-Home</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                        <p class="text-purple-200 mt-2">HR Bonus System</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="absolute bottom-4 left-4">
+                <button onclick="changeSlide(-1)" class="bg-yellow-400 hover:bg-yellow-500 text-purple-900 font-bold py-2 px-4 rounded">&lt;</button>
+            </div>
+            <div class="absolute bottom-4 right-4">
+                <button onclick="changeSlide(1)" class="bg-yellow-400 hover:bg-yellow-500 text-purple-900 font-bold py-2 px-4 rounded">&gt;</button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        const { useState } = React;
-        const { DollarSign, Users, TrendingUp, Home, Clock, ChevronLeft, ChevronRight } = lucide.icons;
+        let currentSlide = 1;
+        let totalSlides = 11;
+        let hires = 10;
 
-        const Slide = ({ children, className }) => 
-            React.createElement('div', { className: `slide ${className}` }, children);
+        function changeSlide(direction) {
+            document.getElementById(`slide${currentSlide}`).classList.remove('active');
+            currentSlide = ((currentSlide + direction - 1 + totalSlides) % totalSlides) + 1;
+            document.getElementById(`slide${currentSlide}`).classList.add('active');
+        }
 
-        const Button = ({ onClick, children }) => 
-            React.createElement('button', { className: 'button', onClick: onClick }, children);
-
-        const Presentation = () => {
-            const [currentSlide, setCurrentSlide] = useState(0);
-            const [hires, setHires] = useState(10);
-            const [overtimeHours, setOvertimeHours] = useState(10);
-            const [overtimeRate, setOvertimeRate] = useState(1.5);
-            const baseRate = 17;
-
-            const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % 11);
-            const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + 11) % 11);
-
-            const slides = [
-                React.createElement(Slide, { key: "1", className: "bg-gradient-to-br from-purple-700 to-blue-900" }, [
-                    React.createElement('h1', null, "Important Meeting Points"),
-                    React.createElement('p', null, "VE Concerns and HR Bonus Proposal")
-                ]),
-                React.createElement(Slide, { key: "2", className: "bg-gradient-to-br from-purple-600 to-blue-800" }, [
-                    React.createElement('h2', null, "VE Overtime Situation"),
-                    React.createElement('ul', null, [
-                        React.createElement('li', null, "VE working overtime without compensation"),
-                        React.createElement('li', null, "Need to discuss charging agency for overtime"),
-                        React.createElement('li', null, "Determine fair overtime rate"),
-                        React.createElement('li', null, `Current base rate: $${baseRate}/hour`)
-                    ])
-                ]),
-                React.createElement(Slide, { key: "3", className: "bg-gradient-to-br from-purple-800 to-blue-900" }, [
-                    React.createElement('h2', null, "Overtime Rate Discussion"),
-                    React.createElement('ul', null, [
-                        React.createElement('li', null, "Consider industry standards for overtime"),
-                        React.createElement('li', null, "Evaluate impact on agency relationship"),
-                        React.createElement('li', null, "Ensure fair compensation for VE"),
-                        React.createElement('li', null, "Discuss potential overtime multipliers (e.g., 1.5x, 2x)")
-                    ])
-                ]),
-                React.createElement(Slide, { key: "4", className: "bg-gradient-to-br from-purple-700 to-blue-800" }, [
-                    React.createElement('h2', null, "Overtime Calculator"),
-                    React.createElement('p', null, `Base Rate: $${baseRate}/hour`),
-                    React.createElement('div', null, [
-                        React.createElement(Button, { onClick: () => setOvertimeHours(prev => Math.max(0, prev - 1)) }, "-"),
-                        React.createElement('span', null, `${overtimeHours} Hours`),
-                        React.createElement(Button, { onClick: () => setOvertimeHours(prev => prev + 1) }, "+")
-                    ]),
-                    React.createElement('div', null, [
-                        React.createElement(Button, { onClick: () => setOvertimeRate(prev => Math.max(1, prev - 0.1)) }, "-"),
-                        React.createElement('span', null, `${overtimeRate.toFixed(1)}x Rate`),
-                        React.createElement(Button, { onClick: () => setOvertimeRate(prev => Math.min(3, prev + 0.1)) }, "+")
-                    ]),
-                    React.createElement('p', null, `Overtime Rate: $${(baseRate * overtimeRate).toFixed(2)}/hour`),
-                    React.createElement('p', null, `Total Overtime Charge: $${(overtimeHours * baseRate * overtimeRate).toFixed(2)}`)
-                ]),
-                React.createElement(Slide, { key: "5", className: "bg-gradient-to-br from-purple-600 to-blue-800" }, [
-                    React.createElement('h2', null, "VE Work from Home Request"),
-                    React.createElement('ul', null, [
-                        React.createElement('li', null, "VE expressed preference for working from home"),
-                        React.createElement('li', null, "Cited busy days preventing participation in office activities"),
-                        React.createElement('li', null, "No proposed solution at this time")
-                    ])
-                ]),
-                React.createElement(Slide, { key: "6", className: "bg-gradient-to-br from-purple-700 to-blue-900" }, [
-                    React.createElement('h2', null, "HR Manager Bonus Proposal"),
-                    React.createElement('p', null, "A Win-Win Strategy for Growth")
-                ]),
-                React.createElement(Slide, { key: "7", className: "bg-gradient-to-br from-purple-600 to-blue-800" }, [
-                    React.createElement('h2', null, "The Proposal"),
-                    React.createElement('ul', null, [
-                        React.createElement('li', null, "Bonus for each new hire"),
-                        React.createElement('li', null, "300,000 Colombian Pesos per hire"),
-                        React.createElement('li', null, "Increases HR manager's salary"),
-                        React.createElement('li', null, "Aims to boost hiring efficiency")
-                    ])
-                ]),
-                React.createElement(Slide, { key: "8", className: "bg-gradient-to-br from-purple-800 to-blue-900" }, [
-                    React.createElement('h2', null, "Benefits"),
-                    React.createElement('div', { className: "icon-container" }, [
-                        React.createElement('div', { className: "icon-item" }, [
-                            React.createElement(DollarSign, { size: 48, color: "#fbbf24" }),
-                            React.createElement('p', null, "Increased Salary")
-                        ]),
-                        React.createElement('div', { className: "icon-item" }, [
-                            React.createElement(Users, { size: 48, color: "#fbbf24" }),
-                            React.createElement('p', null, "More Hires")
-                        ]),
-                        React.createElement('div', { className: "icon-item" }, [
-                            React.createElement(TrendingUp, { size: 48, color: "#fbbf24" }),
-                            React.createElement('p', null, "Company Growth")
-                        ])
-                    ])
-                ]),
-                React.createElement(Slide, { key: "9", className: "bg-gradient-to-br from-purple-700 to-blue-800" }, [
-                    React.createElement('h2', null, "HR Bonus Calculator"),
-                    React.createElement('div', null, [
-                        React.createElement(Button, { onClick: () => setHires(prev => Math.max(0, prev - 1)) }, "-"),
-                        React.createElement('span', null, `${hires} Hires`),
-                        React.createElement(Button, { onClick: () => setHires(prev => prev + 1) }, "+")
-                    ]),
-                    React.createElement('p', null, `Total Bonus: ${(hires * 300000).toLocaleString()} COP`),
-                    React.createElement('p', null, "Potential Monthly Salary Increase!")
-                ]),
-                React.createElement(Slide, { key: "10", className: "bg-gradient-to-br from-purple-900 to-blue-900" }, [
-                    React.createElement('h2', null, "Action Items"),
-                    React.createElement('ul', null, [
-                        React.createElement('li', null, "Decide on overtime rate to charge agency"),
-                        React.createElement('li', null, "Consider VE's work from home request"),
-                        React.createElement('li', null, "Evaluate implementing HR bonus system")
-                    ])
-                ]),
-                React.createElement(Slide, { key: "11", className: "bg-gradient-to-br from-purple-700 to-blue-900" }, [
-                    React.createElement('h2', null, "Questions and Discussion"),
-                    React.createElement('div', { className: "icon-container" }, [
-                        React.createElement('div', { className: "icon-item" }, [
-                            React.createElement(Clock, { size: 48, color: "#fbbf24" }),
-                            React.createElement('p', null, "Overtime")
-                        ]),
-                        React.createElement('div', { className: "icon-item" }, [
-                            React.createElement(Home, { size: 48, color: "#fbbf24" }),
-                            React.createElement('p', null, "Work from Home")
-                        ]),
-                        React.createElement('div', { className: "icon-item" }, [
-                            React.createElement(DollarSign, { size: 48, color: "#fbbf24" }),
-                            React.createElement('p', null, "HR Bonus")
-                        ])
-                    ])
-                ])
-            ];
-
-            return React.createElement('div', { style: { height: '100%' } }, [
-                slides[currentSlide],
-                React.createElement('div', { className: 'nav-buttons' }, [
-                    React.createElement(Button, { onClick: prevSlide }, React.createElement(ChevronLeft)),
-                    React.createElement(Button, { onClick: nextSlide }, React.createElement(ChevronRight))
-                ])
-            ]);
-        };
-
-        ReactDOM.render(React.createElement(Presentation), document.getElementById('root'));
+        function updateHires(change) {
+            hires = Math.max(0, hires + change);
+            document.getElementById('hireCount').textContent = `${hires} Hires`;
+            document.getElementById('totalBonus').textContent = `Total Bonus: ${(hires * 300000).toLocaleString()} COP`;
+        }
     </script>
 </body>
 </html>
