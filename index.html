@@ -8,7 +8,74 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.production.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
     <style>
-        /* ... (keep the existing styles) ... */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+            overflow: hidden;
+        }
+        #root {
+            height: 100%;
+        }
+        .slide {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 2rem;
+            color: #e9d8fd;
+            text-align: center;
+        }
+        .slide h1 {
+            font-size: 2.5rem;
+            color: #fbbf24;
+            margin-bottom: 1rem;
+        }
+        .slide h2 {
+            font-size: 2rem;
+            color: #fbbf24;
+            margin-bottom: 1rem;
+        }
+        .slide ul {
+            text-align: left;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        .button {
+            background-color: #fbbf24;
+            color: #4c1d95;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            border: none;
+            cursor: pointer;
+            margin: 0 0.5rem;
+        }
+        .button:hover {
+            background-color: #f59e0b;
+        }
+        .nav-buttons {
+            position: absolute;
+            bottom: 1rem;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 1rem;
+        }
+        .icon-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-top: 2rem;
+        }
+        .icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     </style>
 </head>
 <body>
@@ -38,7 +105,113 @@
                     React.createElement('h1', null, "Important Meeting Points"),
                     React.createElement('p', null, "VE Concerns and HR Bonus Proposal")
                 ]),
-                // ... (convert the rest of the slides to React.createElement syntax) ...
+                React.createElement(Slide, { key: "2", className: "bg-gradient-to-br from-purple-600 to-blue-800" }, [
+                    React.createElement('h2', null, "VE Overtime Situation"),
+                    React.createElement('ul', null, [
+                        React.createElement('li', null, "VE working overtime without compensation"),
+                        React.createElement('li', null, "Need to discuss charging agency for overtime"),
+                        React.createElement('li', null, "Determine fair overtime rate"),
+                        React.createElement('li', null, `Current base rate: $${baseRate}/hour`)
+                    ])
+                ]),
+                React.createElement(Slide, { key: "3", className: "bg-gradient-to-br from-purple-800 to-blue-900" }, [
+                    React.createElement('h2', null, "Overtime Rate Discussion"),
+                    React.createElement('ul', null, [
+                        React.createElement('li', null, "Consider industry standards for overtime"),
+                        React.createElement('li', null, "Evaluate impact on agency relationship"),
+                        React.createElement('li', null, "Ensure fair compensation for VE"),
+                        React.createElement('li', null, "Discuss potential overtime multipliers (e.g., 1.5x, 2x)")
+                    ])
+                ]),
+                React.createElement(Slide, { key: "4", className: "bg-gradient-to-br from-purple-700 to-blue-800" }, [
+                    React.createElement('h2', null, "Overtime Calculator"),
+                    React.createElement('p', null, `Base Rate: $${baseRate}/hour`),
+                    React.createElement('div', null, [
+                        React.createElement(Button, { onClick: () => setOvertimeHours(prev => Math.max(0, prev - 1)) }, "-"),
+                        React.createElement('span', null, `${overtimeHours} Hours`),
+                        React.createElement(Button, { onClick: () => setOvertimeHours(prev => prev + 1) }, "+")
+                    ]),
+                    React.createElement('div', null, [
+                        React.createElement(Button, { onClick: () => setOvertimeRate(prev => Math.max(1, prev - 0.1)) }, "-"),
+                        React.createElement('span', null, `${overtimeRate.toFixed(1)}x Rate`),
+                        React.createElement(Button, { onClick: () => setOvertimeRate(prev => Math.min(3, prev + 0.1)) }, "+")
+                    ]),
+                    React.createElement('p', null, `Overtime Rate: $${(baseRate * overtimeRate).toFixed(2)}/hour`),
+                    React.createElement('p', null, `Total Overtime Charge: $${(overtimeHours * baseRate * overtimeRate).toFixed(2)}`)
+                ]),
+                React.createElement(Slide, { key: "5", className: "bg-gradient-to-br from-purple-600 to-blue-800" }, [
+                    React.createElement('h2', null, "VE Work from Home Request"),
+                    React.createElement('ul', null, [
+                        React.createElement('li', null, "VE expressed preference for working from home"),
+                        React.createElement('li', null, "Cited busy days preventing participation in office activities"),
+                        React.createElement('li', null, "No proposed solution at this time")
+                    ])
+                ]),
+                React.createElement(Slide, { key: "6", className: "bg-gradient-to-br from-purple-700 to-blue-900" }, [
+                    React.createElement('h2', null, "HR Manager Bonus Proposal"),
+                    React.createElement('p', null, "A Win-Win Strategy for Growth")
+                ]),
+                React.createElement(Slide, { key: "7", className: "bg-gradient-to-br from-purple-600 to-blue-800" }, [
+                    React.createElement('h2', null, "The Proposal"),
+                    React.createElement('ul', null, [
+                        React.createElement('li', null, "Bonus for each new hire"),
+                        React.createElement('li', null, "300,000 Colombian Pesos per hire"),
+                        React.createElement('li', null, "Increases HR manager's salary"),
+                        React.createElement('li', null, "Aims to boost hiring efficiency")
+                    ])
+                ]),
+                React.createElement(Slide, { key: "8", className: "bg-gradient-to-br from-purple-800 to-blue-900" }, [
+                    React.createElement('h2', null, "Benefits"),
+                    React.createElement('div', { className: "icon-container" }, [
+                        React.createElement('div', { className: "icon-item" }, [
+                            React.createElement(DollarSign, { size: 48, color: "#fbbf24" }),
+                            React.createElement('p', null, "Increased Salary")
+                        ]),
+                        React.createElement('div', { className: "icon-item" }, [
+                            React.createElement(Users, { size: 48, color: "#fbbf24" }),
+                            React.createElement('p', null, "More Hires")
+                        ]),
+                        React.createElement('div', { className: "icon-item" }, [
+                            React.createElement(TrendingUp, { size: 48, color: "#fbbf24" }),
+                            React.createElement('p', null, "Company Growth")
+                        ])
+                    ])
+                ]),
+                React.createElement(Slide, { key: "9", className: "bg-gradient-to-br from-purple-700 to-blue-800" }, [
+                    React.createElement('h2', null, "HR Bonus Calculator"),
+                    React.createElement('div', null, [
+                        React.createElement(Button, { onClick: () => setHires(prev => Math.max(0, prev - 1)) }, "-"),
+                        React.createElement('span', null, `${hires} Hires`),
+                        React.createElement(Button, { onClick: () => setHires(prev => prev + 1) }, "+")
+                    ]),
+                    React.createElement('p', null, `Total Bonus: ${(hires * 300000).toLocaleString()} COP`),
+                    React.createElement('p', null, "Potential Monthly Salary Increase!")
+                ]),
+                React.createElement(Slide, { key: "10", className: "bg-gradient-to-br from-purple-900 to-blue-900" }, [
+                    React.createElement('h2', null, "Action Items"),
+                    React.createElement('ul', null, [
+                        React.createElement('li', null, "Decide on overtime rate to charge agency"),
+                        React.createElement('li', null, "Consider VE's work from home request"),
+                        React.createElement('li', null, "Evaluate implementing HR bonus system")
+                    ])
+                ]),
+                React.createElement(Slide, { key: "11", className: "bg-gradient-to-br from-purple-700 to-blue-900" }, [
+                    React.createElement('h2', null, "Questions and Discussion"),
+                    React.createElement('div', { className: "icon-container" }, [
+                        React.createElement('div', { className: "icon-item" }, [
+                            React.createElement(Clock, { size: 48, color: "#fbbf24" }),
+                            React.createElement('p', null, "Overtime")
+                        ]),
+                        React.createElement('div', { className: "icon-item" }, [
+                            React.createElement(Home, { size: 48, color: "#fbbf24" }),
+                            React.createElement('p', null, "Work from Home")
+                        ]),
+                        React.createElement('div', { className: "icon-item" }, [
+                            React.createElement(DollarSign, { size: 48, color: "#fbbf24" }),
+                            React.createElement('p', null, "HR Bonus")
+                        ])
+                    ])
+                ])
             ];
 
             return React.createElement('div', { style: { height: '100%' } }, [
